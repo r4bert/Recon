@@ -1,0 +1,10 @@
+*** REGE ***
+
+- extract IP addresses from files using a regex and delete duplicated IP: 
+grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' subdomain2.txt | sort -u
+
+
+
+*** Recon SubDomain ***
+-filter subdomains in a file
+sed -e '/[A-Z]/d' -e '/*/d' input.txt | grep -oP '[a-z0-9]+\.[a-z]+\.[a-z]+'
