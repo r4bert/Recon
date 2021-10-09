@@ -12,3 +12,19 @@ sed -e '/[A-Z]/d' -e '/*/d' input.txt | grep -oP '[a-z0-9]+\.[a-z]+\.[a-z]+'
 
 *** Masscan ***
  masscan -iL file.txt -p <>
+
+
+
+
+***** linux *****
+cut -d: -f1 /etc/passwd (list all user)
+
+***** Docker *****
+- show all containers use the given command:
+docker ps -a
+-To show the latest created container (includes all states) use the given command:
+docker ps -l
+-To show n last created containers (includes all states) use the given command:
+docker ps -n=-1
+-To display total file sizes use the given command:
+docker ps -s
