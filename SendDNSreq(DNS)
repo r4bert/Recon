@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# DNS server details
+dns_server="8.8.8.8"
+dns_port=53
+
+# Domain to query
+domain="example.com"
+
+# Construct the DNS request packet
+dns_request="\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00"   # DNS header
+dns_request+="\x07example\x03com\x00"   # Example DNS query for "example.com"
+
+# Send the DNS request using netcat (nc)
+echo -ne $dns_request | nc -w 5 -n $dns_server $dns_port
